@@ -36,10 +36,10 @@
 - 점진적 향상법(progressive enhancement)과 우아한 성능저하법(graceful degradation)의 차이를 설명하실 수 있습니까? [[답변]](ANSER/Progressive enhancement.md )
   - "누구도 성공하지 못합니다" 라고 말하면 보너스 포인트를 주세요.
   - 각 특색을 설명을 한다면, 더 높은 보너스 포인트를 주세요.
-- "시멘틱 HTML(Semantic HTML)"이 무엇을 뜻하는지 설명해주세요.  [[답변]](ANSER/Semantic Tag.md )
-- "최소화(minification)"가 무엇을 하는 것입니까? [[답변]](ANSER/Minification.md)
+- "시멘틱 HTML(Semantic HTML)"이 무엇을 뜻하는지 설명해주세요.
+- "최소화(minification)"가 무엇을 하는 것입니까?
 - 여러 도메인을 이용하여 서버 사이트 데이터를 제공하는 것이 더 나은 이유는 무엇인가요?
-  - 브라우저가 한 번에 1개의 도메인에서 다운로드 받는 리소스는 몇 개 인가요? [[답변]](ANSWER/browserDomain.md)
+  - 브라우저가 한 번에 1개의 도메인에서 다운로드 받는 리소스는 몇 개 인가요?
 - 만약에 디자인을 표현하기 위해 8개의 다른 Stylesheet를 가지고 있다면, 사이트에서는 어떻게 통합하실 건가요?
   - 파일의 연결법을 찾아내세요.
   - Build system을 이용한 결합없이, `@import`를 사용하면 점수를 깎으세요.
