@@ -1,7 +1,7 @@
 - # Coding Test
 
   - 이직시 면접에서의 코딩 테스트를 대비하기 위해서 생성했습니다.
-  - 아래 목록들은 [[이 곳\]](https://github.com/h5bp/Front-end-Developer-Interview-Questions/tree/master/Translations/Korean) 에서 그대로 가져 왔습니다.
+  - 아래 목록들은 [[이 곳\]](https://github.com/h5bp/Front-end-Developer-Interview-Questions/tree/master/Translations/Korean) 에서 **그대로** 가져 왔습니다.
   - 원래 항목에는 질문만 있는 경우가 많아서 답변도 같이 만들려고 합니다.
 
   ------
@@ -38,7 +38,7 @@
     - Build system을 이용한 결합없이, `@import`를 사용하면 점수를 깎으세요.
   - 당신이 프로젝트에 합류했습니다. 근데 그들은 Tab을 이용하고, 당신은 Sapce를 사용했습니다. 어떻게 하실건가요?
     - `:retab!` 명령어를 아는지 확인
-  - 간단한 Slideshow 페이지를 만들어보세요.
+  - 간단한 Slideshow 페이지를 만들어보세요.[[ CSS만 사용한 버전]](ANSWER/webpage.index.html)   ////  [[javascript 사용버전]](ANSWER/webpage/slidejs.html)
     - Javascript를 사용하지 않고 만들었다면, 보너스 점수가 있습니다.
   - 당신의 코드의 성능을 테스트하기 위해서 사용하는 도구가 무엇입니까?
   - 올해 당신이 익히고 싶은 기술이 있다면, 그것은 무엇입니까?
