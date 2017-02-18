@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="user-scalable=no, initial-scale=1, width=device-width, height=device-height, minimal-ui">
+<meta name="apple-mobile-web-app-capable" content="no">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>ToDoList</title>
+    <!-- ie8이하에서도 html5 태그 사용 위해 modernizr 사용 -->
+    <!--[if lte IE 8]>
+    <script src="js/modernizr.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/content.css">
+    <link rel="stylesheet" href="css/answer.css">
+    
+</head>
+<body>
+
+    <div class="input-area customArea">
+        <div class="wrapSelect">
+            <i class="fa fa-sort smallRight"></i> 
+            <select id="toDoImportance">
+                <option value="0">중요도</option>
+                <option value="3">매우 중요</option>
+                <option value="2">중요</option>
+                <option value="1">보통</option>
+            </select>
+        </div>
+        <div class="addToDo" id="addToDoList">추가</div>
+        <div class="wrapToDoInput">
+            <input type="text" class="input-text inputToDo" id="toDoSomething" placeholder="할 일을 입력하세요.">
+        </div>
+    </div>
+    <div class="filterBox">
+        <div >
+            <button type="button" value = "0" class="buttonImportant red" >모두</button>
+            <button type="button" value = "3" class="buttonImportant" >매우 중요</button>
+            <button type="button" value = "2" class="buttonImportant" >중요</button>
+            <button type="button" value = "1" class="buttonImportant" >보통</button>
+        </div>
+        <div>
+            <button type="button" value = "all" class="buttonComplete red" >모두</button>
+            <button type="button" value = "true" class="buttonComplete" >완료</button>
+            <button type="button" value = "false" class="buttonComplete" >미완료</button>
+        </div>
+    </div>
+    <div class="listArea">
+    </div>
+
+
+</body>
+    <!-- ie8에서도 정상적으로 es5가 작동하게 하기 위한 라이브러리 -->
+    <!--[if lte IE 8]>
+    <script type="text/javascript" src="js/es5-shim.min.js"></script>
+    <![endif]-->
+    <script src="js/prefixfree.min.js"></script>
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/controller.js"></script>
+</html>
