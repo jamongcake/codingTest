@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function readTextFile(file, callback) {
+        var rawFile = new XMLHttpRequest();
+        rawFile.overrideMimeType("application/json");
+        rawFile.open("GET", file, true);
+        rawFile.onreadystatechange = function() {
+            if (rawFile.readyState === 4 && rawFile.status == "200") {
+                callback(rawFile.responseText);
+            }
+        }
+        rawFile.send(null);
+    }
+    var addr = location.origin + "/items.json";
+    var result = ""
+    //usage:
+    readTextFile(addr, function(text){
+        result = text;
+        console.log(text);
+        // var data = JSON.parse(text);
+        // console.log(data);
+    });
+
+
+</script>
+</html>
