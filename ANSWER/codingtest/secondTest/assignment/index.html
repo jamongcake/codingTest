@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Document</title>
+    <title>직방 프론트엔드 테스트</title>
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
@@ -108,24 +108,24 @@
     <div class="room">
         <h2>건물정보</h2>
         <div class="description">
-            <img class="image building" src="img/academy.png" alt="건물전경">
-            <div class="modalOff"><img class="modalImage" src="img/academy.png" alt="건물전경"></div>
+            <input type="hidden" id="buildingId" value="" >
+            <img id="buildingFront" class="building" src="img/academy.png" alt="건물전경">
             <ul class="buildingDetail">
-                <li>고려 아카데미 텔</li>
-                <li>서울시 마포구 아현동 437-3</li>
-                <li>17층</li>
-                <li>675세대</li>
-                <li>1987.11</li>
+                <li id="buildingName"></li>
+                <li ><span id="address1"></span>&nbsp;<span id="address2"></span>&nbsp;<span id="address3"></span></li>
+                <li id="floor"></li>
+                <li id="rooms"></li>
+                <li id="established"></li>
             </ul>
         </div>
     </div>
     <div class="room">
         <h2>위치보기</h2>
         <div id="map" class="daumMap"></div>
-        <div class="daumMapView" onclick = window.open("http://map.daum.net/link/map/37.402056,127.108212") >
+        <div class="daumMapView" onclick = window.open("http://map.daum.net/link/map/37.551354,126.956126") >
             지도보기
         </div>
-        <div class="daumMapView" onclick = window.open("http://map.daum.net/link/roadview/37.402056,127.108212") >
+        <div class="daumMapView" onclick = window.open("http://map.daum.net/link/roadview/37.551354,126.956126") >
             로그뷰보기
         </div>
     </div>
@@ -134,8 +134,7 @@
         <h2>중개사정보</h2>
         <div class="description">
             <div class="agentLeft">
-                <img class="agentImage  image" src="img/man.png" alt="공인중개사">
-                <div class="modalOff"><img class="modalImage" src="img/man.png" alt="공인중개사"></div>
+                <img class="agentImage" src="img/man.png" alt="공인중개사">
                 <div class="agentBelow">
                     <span class="safedAgent">안심중개사</span>
                     <span class="mark">&trade;</span>
