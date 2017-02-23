@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    다차원 배열을 1차원 배열로 변환하는 함수.
+
+</body>
+<script>
+    var ta= [1,2,{aa:11}, [1,2,[3,[45,7,3]],[3,45,2]], 3,[2], [4,3] ];
+
+    function flatten(data) {
+        var result = [];
+
+        function t1 ( data ) {
+            data.map( x => x instanceof Array ? t1(x) : result.push(x));
+        }
+        
+        t1(data);
+        return result;
+    }
+
+    var ttl = flatten(ta);
+</script>
+</html>
