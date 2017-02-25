@@ -102,77 +102,78 @@ td{background-color: #fff; padding:10px;}
 }
 /* 화면사이즈 : 480px */
 @media screen and (min-width:480px) {
-    .qMark{ padding: 3px 7px;}
-    .belowImg { padding: 20px 15px; }
-    .safedAgent{padding:6px;}
-    .roomTable th{width:34%}
-    .slider{height:310px}
-    .roomImg{height:310px}
-    .daumMap{height:300px}
-    .officeInfo { padding:15px; }
-    .agentBelow{margin-top:-5px;}
-    .guide{padding:10px 20px}
-    .mAdd{margin-top:5px;}
-    .teams { padding:20px;}
     td, li, div{ font-size:17px}
+
+    .agentBelow{margin-top:-5px;}
+    .belowImg { padding: 20px 15px; }
     .call {width:50%; margin-top:0px;}
     .call > a { padding:25px 10px; }
+    .daumMap{height:300px}
+    .guide{padding:10px 20px}
+    .mAdd{margin-top:5px;}
+    .officeInfo { padding:15px; }
+    .qMark{ padding: 3px 7px;}
+    .roomImg{height:310px}
+    .roomTable th{width:34%}
+    .safedAgent{padding:6px;}
+    .slider{height:310px}
+    .teams { padding:20px;}
 }
 /* 화면사이즈 : 640px */
 @media screen and (min-width:640px) {
-    .slider{height:400px}
-    .roomImg{height:400px}
-    .agentBelow{margin-top:-10px;}
-    .description{line-height:2em;}
     th, td, .description{ padding:15px;}
-    .daumMapView { padding:20px 10px;}
-    .officeInfo { padding:20px; }
-    .mAdd{margin-top:8px;}
-    .guide{padding:15px 30px}
+    .agentBelow{margin-top:-10px;}
     .agentRight{width:55%;}
     .bottomInfo { margin:0px 20px 10px;}
     .call > a { margin-right:20px; }
+    .daumMapView { padding:20px 10px;}
+    .description{line-height:2em;}
+    .mAdd{margin-top:8px;}
+    .guide{padding:15px 30px}
+    .officeInfo { padding:20px; }
+    .roomImg{height:400px}
+    .slider{height:400px}
 }
 /* 화면사이즈 : 768px */
 @media screen and (min-width:768px) {
-    .qMark{ padding: 3px 9px;}
-    .belowImg { padding: 30px 25px; }
-    .safedAgent{padding:8px;}
-    .slider{height:460px}
-    .roomImg{height:460px}
-    .daumMap{height:380px;}
-    .officeInfo { padding:25px; }
-    .agentBelow{margin-top:-14px;}
-    .mAdd{margin-top:11px;}
     h1 {font-size:2em; padding:20px 0px;}
     h2 { padding:15px 10px;}
     td, .description{ padding:17px;}
     td, li, div{ font-size:23px}
+    .agentBelow{margin-top:-14px;}
+    .belowImg { padding: 30px 25px; }
+    .daumMap{height:380px;}
+    .mAdd{margin-top:11px;}
+    .officeInfo { padding:25px; }
+    .qMark{ padding: 3px 9px;}
+    .roomImg{height:460px}
+    .safedAgent{padding:8px;}
+    .slider{height:460px}
 
 }
 /* 화면사이즈 : 960px */
 @media screen and (min-width:960px) {
-    .qMark{ padding: 3px 11px;}
-    .slider{height:570px}
-    .roomImg{height:570px}
-    .room{padding:20px;}
-    .agentBelow{margin-top:-17px;}
-    .mAdd{margin-top:13px;}
     h1 {font-size:2em; padding:30px 0px;}
     th, td, .description{ padding:20px;}
     td, li, div{ font-size:28px}
+    .agentBelow{margin-top:-17px;}
     .bottomInfo { margin:0px 30px 10px;}
     .call > a { margin-right:30px; }
+    .mAdd{margin-top:13px;}
+    .qMark{ padding: 3px 11px;}
+    .roomImg{height:570px}
+    .room{padding:20px;}
+    .slider{height:570px}
 }
 /* 화면사이즈 : 1024px */
 @media screen and (min-width:1024px) {
-    .qMark{ padding: 3px 12px;}
-    .belowImg { padding: 35px 30px; }
-    .slider{height:610px}
-    .roomImg{height:610px}
-    .daumMapView { padding:30px 10px;}
-    .agentBelow{margin-top:-19px;}
-    .mAdd{margin-top:15px;}
     td{ padding:30px;}
     td, li, div{ font-size:33px}
+    .agentBelow{margin-top:-19px;}
+    .belowImg { padding: 35px 30px; }
+    .daumMapView { padding:30px 10px;}
+    .mAdd{margin-top:15px;}
+    .qMark{ padding: 3px 12px;}
+    .roomImg{height:610px}
+    .slider{height:610px}
 }

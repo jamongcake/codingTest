@@ -10,16 +10,198 @@
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
 
     <style amp-custom>
-      html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}table{border-collapse:collapse;border-spacing:0}body{background-color:#f6f6f6}h1{font-weight:bold;font-size:1.5em;display:block;padding:10px}h2{font-weight:bold;font-size:1.5em;display:block;padding:10px;color:#646464}h5{font-weight:bold}.roomImg{width:100%}.description{background-color:#fff;padding:10px;border:1px solid #e1e1e1;line-height:2em}.belowImg{background-color:#0ec4bf;color:#fff;padding:20px 10px;position:relative;font-weight:bold}.safedAgent{border:2px solid #fff;border-radius:20px;padding:4px;margin-left:15px}.qMark{background-color:#c3f0ef;border-radius:100px;color:#0ec4bf;padding:0 7px;text-decoration:border;font-weight:bold;float:right}.qMark :after{content:"";clear:both}table{width:100%;border:1px solid #e1e1e1}.room{padding:10px}.rooTable{border:1px solid #eee}th{background-color:#fafafa;color:#6c6c6c;text-align:left;width:33%;padding:10px}td{background-color:#fff;padding:10px}.building{display:inline-block;margin-right:10px;width:48%}.buildingDetail{display:inline-block;width:50%; float:right;}.buildingDetail>li:first-child{font-weight:bold}.buildingDetail>li:nth-child(2){border-bottom:1px solid #b4b4b4;margin-bottom:5px;padding-bottom:5px}.guide{background-color:#848484;color:#fff;padding:10px;line-height:1.5em}.daumMap{width:100%;height:300px}.daumMapView{float:left;background-color:#fff;padding:10px;width:calc(50% - 20px);text-align:center}.clearfix{clear:both;content:""}.modalOff{display:none}.modalOn{display:block;position:fixed;top:0;width:100%;z-index:9999;left:0;background-color:#000;height:100%}.modalImage{width:100%;position:fixed;top:0;bottom:0;margin:auto}#slider{position:relative;width:100%;height:300px;overflow:hidden;white-space:nowrap;border:1px solid black}.roomImg{width:100%;height:300px;position:absolute;transition:4s;z-index:0}.agentLeft{float:left;width:40%}.agentRight{float:right;width:58%;line-height:1.4em}.agentImage{width:100%}.agentBelow{background-color:#0ec4bf;color:#fff;padding:10px 0;margin-top:-10px;text-align:center}.mark{line-height:0;vertical-align:super}.officeInfo{line-height:1.4em;padding:20px}.officeInfo>ul{list-style-type:disc;padding-left:20px;padding-top:10px}.teams{float:left;width:50%;line-height:25px;padding-left:10px}.call{float:left;font-size:x-large;height:100%;width:45%;box-sizing:border-box;padding:10px 0}.call>a{display:block;padding:0 auto;text-align:center;line-height:57px;text-decoration:none;color:#fff;background-color:#fe5200;border-radius:50px}.agent1{color:#9a9a9a}.agent2{color:#000}.phoneNumber{color:#fe5200;font-weight:bold}.agency{border:1px solid #797979;background-color:#eee;color:#797979}.questionCall{height:100%;}
+       /* resetCSS */
+        html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+        a, abbr, acronym, address, big, cite, code,del, dfn, em, img, ins, kbd, q, s, samp,
+        small, strike, strong, sub, sup, tt, var,b, u, i, center,dl, dt, dd, ol, ul, li,
+        fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td,
+        article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, 
+        menu, nav, output, ruby, section, summary,time, mark, audio, video {margin: 0;padding: 0;border: 0;font-size: 100%;font: inherit;vertical-align: baseline;}
+        /* HTML5 display-role reset for older browsers */
+        article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display: block;}
+        body {line-height: 1;}
+        ol, ul {list-style: none;}
+        blockquote, q {quotes: none;}
+        blockquote:before, blockquote:after,
+        q:before, q:after {content: '';content: none;}
+        table {border-collapse: collapse;border-spacing: 0;}
 
-    .lightbox {
-      background: rgba(0,0,0,0.8);
-      width: 100%;
-      height: 100%;
-      position: absolute;
-    }
 
-    .lightbox amp-img{margin-top:150px;}
+        /* common setting */
+        body{background-color:#F6F6F6; word-break:keep-all;}
+        h1{font-weight: bold; font-size:1.5em; display:block;padding:10px 0px;}
+        h2{font-weight: bold; font-size:1.5em; display:block;padding:10px; color:#646464;}
+        h5{font-weight: bold;}
+        .roomImg { width:100%;}
+        .description{background-color:#fff; padding:10px; border:1px solid #E1E1E1; line-height: 1.5em;overflow:hidden}
+        .fa{margin-right:10px}
+
+        /* 안심중개사 등록 */
+        .belowImg{ background-color:#0EC4BF; color:#fff;padding:15px 10px; position:relative; font-weight: bold;}
+        .safedAgent{ border:2px solid #fff;border-radius: 20px; padding:4px;}
+        .qMark { 
+            background-color:#C3F0EF; border-radius:100px;color:#0EC4BF; 
+            padding:3px 6px; text-decoration: border; font-weight: bold;
+            float:right;
+        }
+
+        .qMark:after {content:""; overflow:hidden; clear:both;}
+
+        /* 방전체적인 설명 */
+        table { width:100%; border:1px solid #E1E1E1;}
+        .room { padding:10px}
+        .rooTable {border:1px solid #EEEEEE;}
+        th{
+            background-color:#fafafa; color:#6C6C6C; text-align: left; width:33%;
+            padding:10px;
+        }
+        td{background-color: #fff; padding:10px;}
+
+        /* 세부정보 */
+        .building{ display:block; float:left; margin-right:10px;width:40%; height:100% }
+        .buildingDetail {display:block; width:50%; float:right;}
+        .buildingDetail > li:first-child{font-weight: bold}
+        .buildingDetail > li:nth-child(2){border-bottom : 1px solid #b4b4b4;margin-bottom: 5px; padding-bottom:5px;}
+
+        /* 안내 */
+        .guide {background-color: #848484; color:#fff; padding:10px 15px; line-height:1.5em;}
+
+        /* 위치보기 */
+        .daumMap {width:100%; height:200px; border:1px solid #E6E6E6; box-sizing: border-box; }
+        .daumMapView{float:left; background-color:#fff; padding:10px; width: 50%; text-align: center; border:1px solid #E6E6E6; box-sizing: border-box;}
+        .clearfix { clear:both; content:""}
+        .mapTag { font-size: 18px;line-height: 34px;}
+
+        /* 사진 모달 형식 */
+        .modalOff{display:none;}
+        .modalOn{display:block;position:fixed; top:0px; width:100%;z-index:9999; left:0px; background-color:#000; height:100%}
+        .modalImage{ width:100%; position:fixed; top:0px; bottom:0px; margin:auto;}
+
+        /* 슬라이더 */
+        .slider {position:relative;width:100%;height:250px;overflow:hidden;white-space:nowrap;}
+        .roomImg {width:100%;height:250px;position:absolute;transition: 4s;z-index: 0;}
+
+        /* 중개사 정보 */
+        .agentLeft {float:left; width:40%}
+        .agentRight {float:right; width:58%; line-height: 1.8em;}
+        .agentImage { width:100%;}
+        .agentBelow { background-color:#0EC4BF; color:#fff; padding:10px 0px; margin-top:0px;text-align: center}
+        .mark { line-height:0px; vertical-align: super;}
+        .officeInfo { line-height:1.4em; padding:10px; }
+        .officeInfo > ul { list-style-type:disc; padding-left:20px; padding-top:10px; }
+        .teams { border-top:1px solid #D9D9D9; padding:10px; background-color:#fff}
+        .call { float:right; font-size:1.6em; font-weight: bold; height: 100%; width:48%; box-sizing: border-box; margin-top:8px;}
+        .call > a {display: block;padding: 15px 10px; text-align: center;text-decoration: none;color: #fff;
+                background-color: #FE5200;  border-radius: 50px;margin-right:10px;}
+
+        /* 중개사 정보 아래 문의하기*/
+        .agent1{ color:#9A9A9A}
+        .agent2{ color:#000;}
+        .mAdd{ position:absolute}
+        .phoneNumber{ color:#FE5200; font-weight: bold;}
+        .agency{ border:1px solid #797979; background-color: #EEEEEE; color:#797979; font-size:0.8em; }
+        .bottomInfo{ margin:0px 10px 10px; }
+        .callMe{height:100%}
+
+        
+
+        /* 반응형 */
+        @media screen and (max-width:319px) {
+            .roomTable th{width:38%}
+            td, li, div{ font-size:11px}
+        }
+        /* 화면사이즈 : 320px */
+        @media screen and (min-width:320px) {
+            .roomTable th{width:41%}
+            td, li, div{ font-size:13px}
+        }
+        /* 화면사이즈 : 480px */
+        @media screen and (min-width:480px) {
+            td, li, div{ font-size:17px}
+            .belowImg { padding: 20px 15px; }
+            .call {width:50%; margin-top:0px;}
+            .call > a { padding:25px 10px; }
+            .daumMap{height:300px}
+            .guide{padding:10px 20px}
+            .mAdd{margin-top:5px;}
+            .officeInfo { padding:15px; }
+            .qMark{ padding: 3px 7px;}
+            .roomImg{height:310px}
+            .roomTable th{width:34%}
+            .safedAgent{padding:6px;}
+            .slider{height:310px}
+            .teams { padding:20px;}
+        }
+        /* 화면사이즈 : 640px */
+        @media screen and (min-width:640px) {
+            th, td, .description{ padding:15px;}
+            .agentRight{width:55%;}
+            .bottomInfo { margin:0px 20px 10px;}
+            .call > a { margin-right:20px; }
+            .daumMapView { padding:20px 10px;}
+            .description{line-height:2em;}
+            .mAdd{margin-top:8px;}
+            .guide{padding:15px 30px}
+            .officeInfo { padding:20px; }
+            .roomImg{height:400px}
+            .slider{height:400px}
+        }
+        /* 화면사이즈 : 768px */
+        @media screen and (min-width:768px) {
+            h1 {font-size:2em; padding:20px 0px;}
+            h2 { padding:15px 10px;}
+            td, .description{ padding:17px;}
+            td, li, div{ font-size:23px}
+            .belowImg { padding: 30px 25px; }
+            .daumMap{height:380px;}
+            .mAdd{margin-top:11px;}
+            .officeInfo { padding:25px; }
+            .qMark{ padding: 3px 9px;}
+            .roomImg{height:460px}
+            .safedAgent{padding:8px;}
+            .slider{height:460px}
+
+        }
+        /* 화면사이즈 : 960px */
+        @media screen and (min-width:960px) {
+            h1 {font-size:2em; padding:30px 0px;}
+            th, td, .description{ padding:20px;}
+            td, li, div{ font-size:28px}
+            .bottomInfo { margin:0px 30px 10px;}
+            .call > a { margin-right:30px; }
+            .mAdd{margin-top:13px;}
+            .qMark{ padding: 3px 11px;}
+            .roomImg{height:570px}
+            .room{padding:20px;}
+            .slider{height:570px}
+        }
+        /* 화면사이즈 : 1024px */
+        @media screen and (min-width:1024px) {
+            td{ padding:30px;}
+            td, li, div{ font-size:33px}
+            .belowImg { padding: 35px 30px; }
+            .daumMapView { padding:30px 10px;}
+            .mAdd{margin-top:15px;}
+            .qMark{ padding: 3px 12px;}
+            .roomImg{height:610px}
+            .slider{height:610px}
+        }
+            
+        .questionCall {
+            height: 100%;
+        }
+
+        .lightbox {
+            background: rgba(0, 0, 0, 0.8);
+            width: 100%;
+            height: 100%;
+            position: absolute;
+        }
+
+        .lightbox amp-img {
+            margin-top: 150px;
+        }
+    
 
     </style>
     <script async src="https://cdn.ampproject.org/v0.js"></script>
@@ -152,19 +334,17 @@
     <div class="room">
         <h2>건물정보</h2>
         <div class="description">
-
-        <!--<amp-list width="auto" height="210" layout="fixed-height" src="//127.0.0.1:8000/json/ampJson.json">       -->
-        <amp-list width="auto" height="210" layout="fixed-height" src="/json/ampJson.json">       
+        <amp-list width="auto" height="150" layout="fixed-height" src="/json/ampJson.json">       
             <template type="amp-mustache" id="amp-template-id">
 
                 <input type="hidden" id="buildingId" value="{{building.id}}" >
-                <amp-img layout="fill" width="266" height="210" id="buildingFront" class="building" src="{{building.img}}" alt="건물전경"></amp-img>
+                <amp-img layout="fill" width="266" height="210" class="building" src="{{building.img}}" alt="건물전경"></amp-img>
                 <ul class="buildingDetail">
-                    <li id="buildingName">{{building.name}}</li>
-                    <li ><span id="address1">{{building.address1}}</span>&nbsp;<span id="address2">{{building.address2}}</span>&nbsp;<span id="address3">{{building.address3}}</span></li>
-                    <li id="floor">{{building.floor}}</li>
-                    <li id="rooms">{{building.rooms}}</li>
-                    <li id="established">{{building.established}}</li>
+                    <li>{{building.name}}</li>
+                    <li ><span>{{building.address1}}</span>&nbsp;<span>{{building.address2}}</span>&nbsp;<span>{{building.address3}}</span></li>
+                    <li>{{building.floor}}</li>
+                    <li>{{building.rooms}}</li>
+                    <li>{{building.established}}</li>
                 </ul>
 
             </template>
@@ -172,23 +352,6 @@
                 
         </div>
     </div>
-
-    <!--<div>
-        test
-        <amp-list 
-            width=auto
-            height=100
-            layout=fixed-height
-            src="https://github.com/abhbtbb/codingTest/blob/master/ANSWER/codingtest/secondTest/assignment/items.json"
-            template="amp-template-id"
-        >
-        </amp-list>
-        <template id="amp-template-id" type="amp-mustache">
-            <div>
-                <p>{{datas[0][building][name]}}</p>
-            </div>
-        </template>
-    </div>-->
     <div class="room">
         <h2>위치보기</h2>
           <amp-iframe width="600" height="400" layout="responsive" sandbox="allow-scripts allow-same-origin allow-popups" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJcX0IeHaifDURuW4XsHD_4lQ&key=AIzaSyCNCZ0Twm_HFRaZ5i-FuPDYs3rLwm4_848">
@@ -226,15 +389,13 @@
             공인중개사를 통해 안전하게 계약할 수 있으며, 법정 중개 보수가 발생합니다.
         </div>
     </div>
-    <div class="room">
-        <div class = "teams">
-            <p class="agent1">우정공인중개사(김성훈)</p>
-            <p class="agent2">중개보조원(한유진팀장)</p>
-            <p class="phoneNumber">010-5228-7825 <span class="agency">중개</span></p>
-        </div>
+    <div class = "teams">
         <div class="call">
-            <a href="tel:010-0000-0000" class="questionCall">☏문의하기</a>
+            <a href="tel:010-0000-0000" class="callMe">문의하기</a>
         </div>
+        <p class="bottomInfo agent1">우정공인중개사(김성훈)</p>
+        <p class="bottomInfo agent2">중개보조원(한유진팀장)</p>
+        <p class="bottomInfo phoneNumber">010-5228-7825 <span class="agency">중개</span></p>
     </div>
 
 
