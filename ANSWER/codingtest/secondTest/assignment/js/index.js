@@ -12,7 +12,7 @@ var marker = new daum.maps.Marker({
 
 marker.setMap(map); // 마커 붙이기.
 
-var iwContent = '<div style="padding:5px;">고려 아카데미 텔</div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+var iwContent = '<div class="mapTag">고려 아카데미 텔</div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
     iwPosition = new daum.maps.LatLng(33.450701, 126.570667); //인포윈도우 표시 위치입니다
 
 var infowindow = new daum.maps.InfoWindow({
@@ -99,7 +99,7 @@ function startSlide() {
 
 // =========================== JSON 읽어오기 ==============================================================
 
-var jsonPath = location.origin + "/items.json"; 
+var jsonPath = location.origin + "/json/items.json"; 
 var jsonText = {};
 
 /** 해당 경로의 json을 읽어오기 */
@@ -124,7 +124,6 @@ function setBuildingInfo( info ){
     };
     var temp = info.datas[0].building;
     for( one in buildingInfo ) {
-        console.log(temp[one]);
         document.getElementById(buildingInfo[one]).innerText = temp[one];
     }
     document.getElementById("buildingId").value = temp.id;
@@ -140,8 +139,16 @@ function startJson(){
 
 // =========================================================================================
 
+/** 다음 마커 태그 스타일 수정*/
+function mapTag(){
+    var test = document.getElementsByClassName('mapTag')[0];
+    test.parentElement.style.textAlign = "center";
+    test.parentElement.style.width = "100%";
+}
+
 /** 페이지가 로딩되었을 때 시작함수 */
 function init() {
+    mapTag();
     startJson();
     addImgModal();
     sliderSetting();

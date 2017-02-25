@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>직방 프론트엔드 테스트</title>
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    <div id="slider">
+    <div id="slider" class="slider">
         <img class="roomImg image" src="img/room.png" alt="방이미지">
         <div class="modalOff"><img class="modalImage"  src="img/room.png" alt="방이미지"></div>
         <img class="roomImg image" src="img/room1.png" alt="방이미지">
@@ -19,11 +20,11 @@
     <div class="belowImg">
         <span class="safedAgent">안심중개사</span>
         <span class="mark">&trade;</span>
-        가 등록한 방입니다
+        가 등록한 방입니다.
         <span class="qMark">?</span>
     </div>
-    <h1>신사동 예쁜 쓰리룸</h1>
     <div class="room">
+        <h1>신사동 예쁜 쓰리룸</h1>
         <table class="roomTable">
         <tr>
             <th>보증금</th>
@@ -70,7 +71,7 @@
             <td>없음</td>
         </tr>
         <tr>
-            <th>관리비 포함항목</th>
+            <th>관리비 포함 항목</th>
             <td>수도</td>
         </tr>
         <tr>
@@ -109,7 +110,7 @@
         <h2>건물정보</h2>
         <div class="description">
             <input type="hidden" id="buildingId" value="" >
-            <img id="buildingFront" class="building" src="img/academy.png" alt="건물전경">
+            <img id="buildingFront" class="building" src="" alt="건물전경">
             <ul class="buildingDetail">
                 <li id="buildingName"></li>
                 <li ><span id="address1"></span>&nbsp;<span id="address2"></span>&nbsp;<span id="address3"></span></li>
@@ -123,10 +124,10 @@
         <h2>위치보기</h2>
         <div id="map" class="daumMap"></div>
         <div class="daumMapView" onclick = window.open("http://map.daum.net/link/map/37.551354,126.956126") >
-            지도보기
+            <i class="fa fa-map-o"></i>지도보기
         </div>
         <div class="daumMapView" onclick = window.open("http://map.daum.net/link/roadview/37.551354,126.956126") >
-            로그뷰보기
+            <i class="fa fa-street-view"></i>로그뷰보기
         </div>
     </div>
     <div class="clearfix"></div>
@@ -137,7 +138,7 @@
                 <img class="agentImage" src="img/man.png" alt="공인중개사">
                 <div class="agentBelow">
                     <span class="safedAgent">안심중개사</span>
-                    <span class="mark">&trade;</span>
+                    <span class="mark mAdd">&trade;</span>
                 </div>
             </div>
             <div class="agentRight">
@@ -161,15 +162,13 @@
             공인중개사를 통해 안전하게 계약할 수 있으며, 법정 중개 보수가 발생합니다.
         </div>
     </div>
-    <div class="room">
-        <div class = "teams">
-            <p class="agent1">우정공인중개사(김성훈)</p>
-            <p class="agent2">중개보조원(한유진팀장)</p>
-            <p class="phoneNumber">010-5228-7825 <span class="agency">중개</span></p>
-        </div>
+    <div class = "teams">
         <div class="call">
-            <a href="tel:010-0000-0000" style="height:100%;">☏문의하기</a>
+            <a href="tel:010-0000-0000" style="height:100%;"><i class="fa fa-phone"></i>문의하기</a>
         </div>
+        <p class="bottomInfo agent1">우정공인중개사(김성훈)</p>
+        <p class="bottomInfo agent2">중개보조원(한유진팀장)</p>
+        <p class="bottomInfo phoneNumber">010-5228-7825 <span class="agency">중개</span></p>
     </div>
 
 

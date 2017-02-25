@@ -18,9 +18,8 @@
       height: 100%;
       position: absolute;
     }
-    .lightbox h1 {
-      color: white;
-    }
+
+    .lightbox amp-img{margin-top:150px;}
 
     </style>
     <script async src="https://cdn.ampproject.org/v0.js"></script>
@@ -32,51 +31,32 @@
 </head>
 <body>
     <!--캐러셀-->
-    <amp-carousel id="carousel-with-preview"
-        width="400"
-        height="300"
-        layout="responsive"
-        autoplay
-        loop
-        delay="3000"
-        type="slides">
-    <button on="tap:my-lightbox1" role="button" tabindex="0">
-    <amp-img src="img/room.png"
-        width="400"
-        height="300"
-        layout="responsive"
-        alt="방사진"></amp-img>
-    </button>
-    <button on="tap:my-lightbox2" role="button" tabindex="0">
-    <amp-img src="img/room1.png"
-        width="400"
-        height="300"
-        layout="responsive"
-        alt="방사진"></amp-img>
-    </button>
-    <button on="tap:my-lightbox3" role="button" tabindex="0">
-    <amp-img src="img/room2.png"
-        width="400"
-        height="300"
-        layout="responsive"
-        alt="방사진"></amp-img>
-    </button>
+    <amp-carousel id="carousel-with-preview" width="400" height="300" layout="responsive" autoplay loop delay="3000" type="slides">
+        <button on="tap:my-lightbox1" role="button" tabindex="0">
+            <amp-img src="img/room.png" width="400" height="300" layout="responsive" alt="방사진"></amp-img>
+        </button>
+        <button on="tap:my-lightbox2" role="button" tabindex="0">
+            <amp-img src="img/room1.png" width="400" height="300" layout="responsive" alt="방사진"></amp-img>
+        </button>
+        <button on="tap:my-lightbox3" role="button" tabindex="0">
+            <amp-img src="img/room2.png" width="400" height="300" layout="responsive" alt="방사진"></amp-img>
+        </button>
     </amp-carousel>
 
     <!--모달-->
     <amp-lightbox id="my-lightbox1" layout="nodisplay">
         <div class="lightbox" on="tap:my-lightbox1.close" role="button" tabindex="0">
-        <h1>Hello World!11</h1>
+            <amp-img src="img/room.png" width="400" height="300" layout="responsive" alt="방사진"></amp-img>
         </div>
     </amp-lightbox>
     <amp-lightbox id="my-lightbox2" layout="nodisplay">
         <div class="lightbox" on="tap:my-lightbox2.close" role="button" tabindex="0">
-        <h1>Hello World!22</h1>
+            <amp-img src="img/room1.png" width="400" height="300" layout="responsive" alt="방사진"></amp-img>
         </div>
     </amp-lightbox>
     <amp-lightbox id="my-lightbox3" layout="nodisplay">
         <div class="lightbox" on="tap:my-lightbox3.close" role="button" tabindex="0">
-        <h1>Hello World!33</h1>
+            <amp-img src="img/room2.png" width="400" height="300" layout="responsive" alt="방사진"></amp-img>
         </div>
     </amp-lightbox>
     
@@ -173,11 +153,12 @@
         <h2>건물정보</h2>
         <div class="description">
 
-        <amp-list width="auto" height="210" layout="fixed-height" src="//127.0.0.1:8080/json/ampJson.json">       
+        <!--<amp-list width="auto" height="210" layout="fixed-height" src="//127.0.0.1:8000/json/ampJson.json">       -->
+        <amp-list width="auto" height="210" layout="fixed-height" src="/json/ampJson.json">       
             <template type="amp-mustache" id="amp-template-id">
 
                 <input type="hidden" id="buildingId" value="{{building.id}}" >
-                <amp-img layout="fill" width="266" height="210" id="buildingFront" class="building" src="img/academy.png" alt="건물전경"></amp-img>
+                <amp-img layout="fill" width="266" height="210" id="buildingFront" class="building" src="{{building.img}}" alt="건물전경"></amp-img>
                 <ul class="buildingDetail">
                     <li id="buildingName">{{building.name}}</li>
                     <li ><span id="address1">{{building.address1}}</span>&nbsp;<span id="address2">{{building.address2}}</span>&nbsp;<span id="address3">{{building.address3}}</span></li>
