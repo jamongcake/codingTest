@@ -110,7 +110,7 @@
         <h2>건물정보</h2>
         <div class="description">
             <input type="hidden" id="buildingId" value="" >
-            <img id="buildingFront" class="building" src="" alt="건물전경">
+            <img id="buildingFront" class="building" src="img/academy.png" alt="건물전경">
             <ul class="buildingDetail">
                 <li id="buildingName"></li>
                 <li ><span id="address1"></span>&nbsp;<span id="address2"></span>&nbsp;<span id="address3"></span></li>
@@ -123,10 +123,10 @@
     <div class="room">
         <h2>위치보기</h2>
         <div id="map" class="daumMap"></div>
-        <div class="daumMapView" onclick = window.open("http://map.daum.net/link/map/37.551354,126.956126") >
+        <div class="daumMapView" id="lookingMap">
             <i class="fa fa-map-o"></i>지도보기
         </div>
-        <div class="daumMapView" onclick = window.open("http://map.daum.net/link/roadview/37.551354,126.956126") >
+        <div class="daumMapView" id="lookingLoad">
             <i class="fa fa-street-view"></i>로그뷰보기
         </div>
     </div>
@@ -175,6 +175,6 @@
 </body>
 <script type="text/javascript" src="//apis.daum.net/maps/maps3.js?apikey=d2e7287a216bc9334a6ed600859afac7"></script>
 <script type="text/javascript" src="//apis.daum.net/maps/maps3.js?apikey=d2e7287a216bc9334a6ed600859afac7&libraries=services,clusterer,drawing"></script>
-<script src="js/index.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
 
 </html>

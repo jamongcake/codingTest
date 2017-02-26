@@ -148,11 +148,17 @@
         test.parentElement.style.width = "100%";
     }
 
+    function lookingMapRoad(){
+        document.getElementById('lookingMap').onclick = function(){window.open("http://map.daum.net/link/map/37.551354,126.956126");}
+        document.getElementById('lookingLoad').onclick = function(){ window.open("http://map.daum.net/link/roadview/37.551354,126.956126");}
+    }
+
     // =========================================================================================
 
     /**시작함수 */
     function init() {
         mapTag();
+        lookingMapRoad();
         startJson();
         addImgModal();
         sliderSetting();

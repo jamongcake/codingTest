@@ -57,9 +57,10 @@
         }
         td{background-color: #fff; padding:10px;}
 
-        /* 세부정보 */
+        /* 건물정보 */
         .building{ display:block; float:left; margin-right:10px;width:40%; height:100% }
-        .buildingDetail {display:block; width:50%; float:right;}
+        .buildingDes{ height:150px; padding:0px;}
+        .buildingDetail {display:block; width:44%; float:left;padding:10px;}
         .buildingDetail > li:first-child{font-weight: bold}
         .buildingDetail > li:nth-child(2){border-bottom : 1px solid #b4b4b4;margin-bottom: 5px; padding-bottom:5px;}
 
@@ -68,7 +69,7 @@
 
         /* 위치보기 */
         .daumMap {width:100%; height:200px; border:1px solid #E6E6E6; box-sizing: border-box; }
-        .daumMapView{float:left; background-color:#fff; padding:10px; width: 50%; text-align: center; border:1px solid #E6E6E6; box-sizing: border-box;}
+        .daumMapView{float:left; background-color:#fff; padding:10px; width: 50%; text-align: center; border:1px solid #E6E6E6; box-sizing: border-box; cursor:pointer}
         .clearfix { clear:both; content:""}
         .mapTag { font-size: 18px;line-height: 34px;}
 
@@ -103,7 +104,6 @@
         .bottomInfo{ margin:0px 10px 10px; }
         .callMe{height:100%}
 
-        
 
         /* 반응형 */
         @media screen and (max-width:319px) {
@@ -119,6 +119,8 @@
         @media screen and (min-width:480px) {
             td, li, div{ font-size:17px}
             .belowImg { padding: 20px 15px; }
+            .buildingDes{ height:180px;}
+            .buildingDetail{ padding-left:20px;}
             .call {width:50%; margin-top:0px;}
             .call > a { padding:25px 10px; }
             .daumMap{height:300px}
@@ -136,6 +138,7 @@
         @media screen and (min-width:640px) {
             th, td, .description{ padding:15px;}
             .agentRight{width:55%;}
+            .buildingDes{ height:200px; padding:0px;}
             .bottomInfo { margin:0px 20px 10px;}
             .call > a { margin-right:20px; }
             .daumMapView { padding:20px 10px;}
@@ -153,6 +156,7 @@
             td, .description{ padding:17px;}
             td, li, div{ font-size:23px}
             .belowImg { padding: 30px 25px; }
+            .buildingDes{ height:260px;  padding:0px;}
             .daumMap{height:380px;}
             .mAdd{margin-top:11px;}
             .officeInfo { padding:25px; }
@@ -168,6 +172,7 @@
             th, td, .description{ padding:20px;}
             td, li, div{ font-size:28px}
             .bottomInfo { margin:0px 30px 10px;}
+            .buildingDes{ height:320px;  padding:0px;}
             .call > a { margin-right:30px; }
             .mAdd{margin-top:13px;}
             .qMark{ padding: 3px 11px;}
@@ -180,6 +185,7 @@
             td{ padding:30px;}
             td, li, div{ font-size:33px}
             .belowImg { padding: 35px 30px; }
+            .buildingDes{ height:350px;}
             .daumMapView { padding:30px 10px;}
             .mAdd{margin-top:15px;}
             .qMark{ padding: 3px 12px;}
@@ -333,12 +339,12 @@
     </div>
     <div class="room">
         <h2>건물정보</h2>
-        <div class="description">
-        <amp-list width="auto" height="150" layout="fixed-height" src="/json/ampJson.json">       
+        <div class="description buildingDes">
+        <amp-list width="auto" height="700" layout="fixed-height" src="/json/ampJson.json">       
             <template type="amp-mustache" id="amp-template-id">
 
                 <input type="hidden" id="buildingId" value="{{building.id}}" >
-                <amp-img layout="fill" width="266" height="210" class="building" src="{{building.img}}" alt="건물전경"></amp-img>
+                <amp-img layout="fixed-height" width="auto" height="370" class="building" src="{{building.img}}" alt="건물전경"></amp-img>
                 <ul class="buildingDetail">
                     <li>{{building.name}}</li>
                     <li ><span>{{building.address1}}</span>&nbsp;<span>{{building.address2}}</span>&nbsp;<span>{{building.address3}}</span></li>
