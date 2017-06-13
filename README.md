@@ -103,11 +103,17 @@
 
   ```
   [1,2,3,4,5].duplicator(); // [1,2,3,4,5,1,2,3,4,5]
+
+  Array.prototype.duplicator = function(){
+    return this.concat( this );
+  }
+
   ```
 
   - Javascript에서 메모이제이션(memoization, 중복 계산 방지)에 대한 전략을 설명해주세요.
-  - 삼항식(Ternary statement)을 사용하는 이유는 무엇이고, 그것을 표현하기 위한 연산자 단어는 무엇인가요?
-  - arity는 어떠한 함수인가요?
+  - 삼항식(Ternary statement)을 사용하는 이유는 무엇이고, 그것을 표현하기 위한 연산자 단어는 무엇인가요?  JS에서 삼항식을 사용하는 것은 조건부 삼항 연산자 로 주로 if 문의 축약형으로 사용된다.
+  ` condition ? expr1 : expr2 `
+  - arity는 어떠한 함수인가요? 함수의 인자 수를 나타내는 것으로 지금은 존재하지 않으며 Function.prototype.length프로퍼티로 대체되었다. 
 
   ## Javascript 코드 예제:
 
