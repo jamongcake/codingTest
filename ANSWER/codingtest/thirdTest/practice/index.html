@@ -4,223 +4,90 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+	<title>Document</title>
+	<link rel="stylesheet" href="./reset.css">
+	
     <style>
-        .container{width:800px; height:640px; background-color:#eee;margin:0 auto;}
-		.container > div:first-child{height:200px;background-color:yellow}
-		.container > div:last-child{height:440px;padding:0px 30px;background-color:green}
+        .container{width:740px; height:640px; margin:30px auto; padding:25px 30px 30px; background-color:#eee;}
+		.container > div:first-child{height:200px;}
+		.container > div:last-child{height:440px;background-color:#fff}
 
+		.head > div > h3,li{float:left;}
+		.head > div > h3{
+			width: 50px;
+			height: 30px;
+			font-family: NanumGothic;
+			font-size: 13px;
+			font-weight: bold;
+			text-align: left;
+			line-height:30px;
+			color: #000000;
+		}
+		.head > div > ul > li{
+			width:72px;height:30px;border-radius:3px;
+			background-color:rgba(82, 77, 83, 0.5);
+			text-align: center;line-height: 30px;font-size:11px;
+			color:#fff;
+			margin-right:17px;margin-bottom:25px;
+		}
+		.head > div > ul > li.clicked {
+			background-color:#524d53;
+		}
+		.head > div {clear:both;}
+		#chartTitle {padding-top:20px;text-align:center;font-size:15px;}		
     </style>
 </head>
 <body>
-<svg height="60" width="200">
-  <text x="0" y="15" fill="red" transform="rotate(30 20,40)">I love SVG</text>
-</svg>
+
     <div class="container" id="container">
-		<div>11</div>
+		<div class="head">
+			<div>
+				<h3>성별</h3>
+				<ul>
+					<li class="clicked">남성</li>
+					<li>여성</li>
+				</ul>
+			</div>
+			<div>
+				<h3>연령</h3>
+				<ul>
+					<li>20대</li>
+					<li>30대</li>
+					<li>40대</li>
+					<li>50대</li>
+				</ul>
+			</div>
+			<div>
+				<h3>문항</h3>
+				<ul>
+					<li>1번문항</li>
+					<li>2번문항</li>
+					<li>3번문항</li>
+					<li>4번문항</li>
+					<li>5번문항</li>
+				</ul>
+			</div>
+		</div>
 		<div id="graph">
-			<!--
-			<svg version="1.1" baseProfile="full" 
-			 width="740" height="440" xmlns="http://www.w3.org/2000/svg">
-			 
-			<rect width="100%" height="100%" fill="white" />
-			
-			<circle cx="470" cy="220" r="80" fill="blue" />
-			<path d="M10 10 H50 V50 H10 z" fill="black" />
-			<path d="M10 60 L60 60, 60 110, 10 110 z fill="black" />
-			<path d="M10 120 h50 v50 h-50 z " fill="#eee" />
-			-->
-			<!--path d="M10 250
-					 A50 50 0 0 1 60 300
-					 L10 300
-					 z" fill="black" /-->
-			<!--
-			<path d="M10 300
-					 a150 150 0 0 1 150 150
-					 L10 450 z"
-				  fill="black" />
-			<path d="M80 80 
-				   A 45 45, 0, 0, 0, 125 125 
-				   L 125 80 Z" fill="green"/>
-			<path d="M230 80
-				  A 45 45, 0, 1, 0, 275 125
-				  L 275 80 Z" fill="red"/>
-			<path d="M80 80
-				  A 45 45, 0, 1, 1, 125 125
-				  L 125 80 Z" fill="blue"/>
-			-->
-		</svg></div>
+			<div id="chartTitle"></div>
+		</div>
     </div>
 </body>
 <script type="text/javascript" language="javascript" charset="utf-8" src="surveyData.js"></script>
 <script type="text/javascript" language="javascript" charset="utf-8" src="JsData.js"></script>
+<script type="text/javascript" language="javascript" charset="utf-8" src="JsChart.js"></script>
 <script>
-
 	let graph = document.getElementById("graph");
-	
-	const createSVG = (tag) => 
-		document.createElementNS("http://www.w3.org/2000/svg", tag);	
-	
-	const setAttr = (target, attrs) => {
-		let one;
-		for(one in attrs) {
-			if(attrs.hasOwnProperty(one)) target.setAttribute(one, attrs[one]);
-		}
-		return target;
-	}
-	
-	
-	const xyforPercent = (radius, percent) => {
-		let rad = -Math.PI * 2 * percent;
-		return {
-			x:radius * Math.sin(rad),
-			y:radius * Math.cos(rad)
-		}
-	}
-	
-	// createSVG로 생성된 svg가 리턴 됨.	
-	const createSVGElement = (parentDom, tag, attrs) =>
-		parentDom.appendChild(setAttr(createSVG(tag), attrs));	
-	
-	
-	let svg = createSVGElement(graph, "svg", {
-		width:740, height:440,
-		//style:"transform:rotate(0.5turn)"
-	});
-	
-	
-	
-	
-	
-	// "M100 100 A     100 100, 0,      0, 0,   150, 189 L 200 100 z"
-	// 시작점 x y, arc 반지름x 반지름y, x축회전, 회전1 회전2, 각끝x 각끝y, 각시작점
-
-	
-	// [30, 20, 10] ==> 총합 60. 360 / 60 * [30, 20, 10] 
-	// ==> [0:180, 180:300, 300:360]
-	// 중심점 300, 200, 반지름 : 100, 시작점 : 300, 100
-	
-	
-	/*
-	let one = xyforPercent(100, 0.1);
-	
-	console.log(one.x, one.y);
-	createSVGElement(svg, "path", {
-		id:"t",transform:"translate(300, 200) rotate(-180)",
-		d: `M0 100 A 100 100, 0, 0, 1, ${one.x}, ${one.y} L 0 0`,
-		fill: "blue"
-	});
-	let two = xyforPercent(100, 0.5);
-	
-	createSVGElement(svg, "path", {
-		id:"t",transform:"translate(300, 200) rotate(-144)",
-		d: `M0 100 A 100 100, 0, 0, 1, ${two.x}, ${two.y} L 0 0`,
-		fill: "yellow"
-	});
-	*/
-	
-	const returnRGB = () => {
-		const code = "0123456789abcdef";
-		return [1,2,3,4,5,6].reduce( (p,c)=> (p + code[~~(Math.random() * 16)]), "#")
-	}
-	
-	const pieGraph = (parent, arr, center, radius) => {
-		let angle = -180;
-		let tempXY;
-		let half = 0;
-		
-		arr.forEach(one => {
-			
-			half = one <= 0.5 ? 0 : 1;
-			tempXY = xyforPercent(radius, one-0.000001);// 360도가 되면 사라지는 것을 방지용.
-			createSVGElement(parent, "path", {
-				class:'onepart',
-				transform:`translate(${center.x}, ${center.y}) rotate(${angle})`,
-				d: `M0 ${radius} A ${radius} ${radius}, 0, ${half}, 1, ${tempXY.x}, ${tempXY.y} L 0 0`,
-				fill: `${returnRGB()}`
-			});
-			angle += 360 * one;
-		});
-		
-		arr.forEach(one => {
-			let a = one * 360;
-			half = one <= 0.5 ? 0 : 1;
-			tempXY = xyforPercent(radius, one-0.000001);// 360도가 되면 사라지는 것을 방지용.
-			
-			let g = createSVGElement(parent,"g", {
-				transform:`translate(${center.x}, ${center.y}) rotate(${angle-a/2})`,
-				display:'none',
-				class:"chartTextBox",
-				x:tempXY.x, y:tempXY.y, 
-			});
-			
-			let g1 = createSVGElement(g,"g", {
-				class:'oneText',
-				transform:`translate(${tempXY.x*1.1}, ${tempXY.y*1.1}) rotate(${-angle+a/2})`,
-
-			});
-			
-			createSVGElement(g1,"rect", {
-				fill:'#000',rx:10, ry:10,
-				width:100,height:40,x:-20, y:-25
-			});
-			
-			createSVGElement(g1,"text", {
-				fill:'#fff'
-			}).innerHTML = one;
-			
-			angle += 360 * one;
-		})
-	}
-	
-	pieGraph(svg, [0.1, 0.1, 0.1, 0.2, 0.5], {x:250, y:240}, 150);
-	//pieGraph(svg, [1], {x:300, y:220}, 200);
-
-	var op = document.getElementsByClassName('onepart');
-	var ctb = document.getElementsByClassName('chartTextBox');
-	
-	for(let i = 0; i < op.length; i++) {
-		op[i].addEventListener('mouseenter',
-			(num => event => ctb[i].style.display='block')(i)
-		);
-		
-		op[i].addEventListener('mouseleave',
-			(num => event => ctb[i].style.display='none')(i)
-		);
-	}
-	
-	/*
-	
-	let three = xyforPercent(100, 0.4);
-	
-	createSVGElement(svg, "path", {
-		id:"t",transform:"translate(300, 200) rotate(36)",
-		d: `M0 100 A 100 100, 0, 0, 1, ${three.x}, ${three.y} L 0 0`,
-		fill: "black"
-	});
-	*/
-	
-
-	
-	
-	
-	
-	
-	
-	// ===================================================================================
-	console.log();
 	// surveyData는 각 항목마다 체크 알고리즘이 다르므로 런타임에 넣도록 한다.
 	let data = new JsData(surveyData, surveyActionData);
 	
 	// 체크알고리즘
 	let genderChecker = (oneData, oneRule) => {
 		return oneData.gender === oneRule ? oneRule : false;
-	}
-		
+	}		
 	let ageChecker = (oneData, oneRule) => {
 		let age = ~~(oneData.age/10)*10; return oneRule.indexOf(age) > -1 ? age : false;
-	}
-		
+	}	
 	let answerChecker = (oneData, oneRule) => {
 		return oneData.answer[oneRule];
 	};
@@ -229,153 +96,22 @@
 	data.addCheckRule(genderChecker);
 	data.addCheckRule(answerChecker);
 	data.addCheckRule(ageChecker);
-	
-	// 실제 동작 [gender, answer, age]
-	console.time('check');
-	//let resultData = info.getData(["male", 1, [20, 30,40, 50]]);
+
 	let resultData = data.getData(["male", 1, [20]]);
-	console.timeEnd('check');
 	
-	
-	// ===================================================================================
-	
-	class ChartManager{
-		constructor(surveyData) {
-			this.surveyData = surveyData;
-			this.chartData;
-			this.chartRules;
-			this.charts = {}
-		}
-		addChart(chartName, chart) {
-			this.charts[chartName] = chart;
-		}
-		changeData(data) {
-			this.chartData = data;
-			/** todo */
-			//render();
-		}
-	}
-	
-	class Chart {
-		constructor({surveyData, areaId, svgSetting, pieSetting, barSetting}) {
-			this.surveyData = surveyData;
-			this.parent = this.createSVGElement(document.getElementById(areaId), 'svg', {width:svgSetting.width, height:svgSetting.height} )
-			this.pieSetting = pieSetting;
-			this.barSetting = barSetting;
-			this.data;
-			this.rules;
-		}
-		setData({targetRules,result}) {
-			this.data = result;
-			this.rules = targetRules;
-			
-			this.drawChart();
-			this.drawTable();
-		}
-		returnRGB() {
-			const code = "0123456789abcdef";
-			return [1,2,3,4,5,6].reduce( (p,c)=> (p + code[~~(Math.random() * 16)]), "#")
-		}			
-		createSVG(tag) {
-			return document.createElementNS("http://www.w3.org/2000/svg", tag);
-		}
-		setAttr(target, attrs) {
-			for(let one in attrs) {
-				if(attrs.hasOwnProperty(one)) target.setAttribute(one, attrs[one]);
-			}
-			return target;
-		}
-		xyforPercent(radius, percent) {
-			let rad = -Math.PI * 2 * percent;
-			return { x: radius * Math.sin(rad), y: radius * Math.cos(rad) }
-		}
-		createSVGElement(parentDom, tag, attrs) {
-			return parentDom.appendChild(this.setAttr(this.createSVG(tag), attrs));	
-		}
-		
-		drawTitle(parentDom){
-			this.createSVGElement(parentDom, 'text', {
-				x:40, y:40, fill:'black'
-			}).innerHTML = this.surveyData.title;
-		}
-		drawChart(){}
-		drawTable(){}
-	}
-	
-	
-	
-	
-	
-
-	
-	class PieChart extends Chart {
-		constructor(){super()}
-
-		drawChart() {
-			let [parent, arr, center, radius] = [this.parent, this.arr, this.center, this.radius];
-			let [angle, half, tempXY] = [-180, 0, undefined];
-			let [xy, rgb, cSVG] = [this.xyforPercent,this.returnRGB,this.createSVGElement];
-			
-			arr.forEach(one => {
-				
-				half = one <= 0.5 ? 0 : 1;
-				tempXY = xy(radius, one-0.000001);// 360도가 되면 사라지는 것을 방지용.
-				cSVG(parent, "path", {
-					class:'onepart',
-					transform:`translate(${center.x}, ${center.y}) rotate(${angle})`,
-					d: `M0 ${radius} A ${radius} ${radius}, 0, ${half}, 1, ${tempXY.x}, ${tempXY.y} L 0 0`,
-					fill: `${rgb()}`
-				});
-				angle += 360 * one;
-			});
-			
-			arr.forEach(one => {
-				let a = one * 360;
-				half = one <= 0.5 ? 0 : 1;
-				tempXY = xy(radius, one-0.000001);// 360도가 되면 사라지는 것을 방지용.
-				
-				let g = cSVG(parent,"g", {
-					transform:`translate(${center.x}, ${center.y}) rotate(${angle-a/2})`,
-					display:'none',
-					class:"chartTextBox",
-					x:tempXY.x, y:tempXY.y, 
-				});
-				
-				let g1 = cSVG(g,"g", {
-					class:'oneText',
-					transform:`translate(${tempXY.x*1.1}, ${tempXY.y*1.1}) rotate(${-angle+a/2})`,
-				});
-				
-				cSVG(g1,"rect", {
-					fill:'#000',rx:10, ry:10,
-					width:100,height:40,x:-20, y:-25
-				});
-				
-				cSVG(g1,"text", {
-					fill:'#fff'
-				}).innerHTML = one;
-				
-				angle += 360 * one;
-			})
-		}
-		
-	}
-	
-	class BarChart extends Chart {
-		constructor(){super()}	
-	}
-	
-	let chart = new Chart({
+	let chart = new PieChart({
 		surveyData: surveyData, 
 		areaId: "graph", 
-		svgSetting: {width:740, height:440}, 
-		pieSetting: {center:{x:300,y:300}, radius:150}, // [parent, arr, center, radius] 
+		svgSetting: {width:740, height:400}, 
+		pieSetting: {center:{x:260,y:200}, radius:150}, // [parent, arr, center, radius] 
 		barSetting: {}
 	});
-	console.log(chart.surveyData);
-	console.log(chart.data);
-	console.log(chart.rules);
-	chart.drawTitle(svg);
+
+	chart.setData(resultData);
+	
+	chart.drawTitle();
+	chart.drawChart([0.1, 0.1, 0.1, 0.2, 0.5]);
+	chart.makeButtons();
 	
 </script>
 </html>

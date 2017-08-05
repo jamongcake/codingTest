@@ -1,14 +1,5 @@
-
-	// 1. 데이터를 받아온다.
-	// 2. 데이터를 가공한다.
-	// 3. 렌더링으로 보낸다.
-	
-	// surveyData		==> gender[남성, 여성], age[20, 30, 40, 50], questions[1번문항, 2번문항, 3번문항, 4번문항, 5번문항]
-	// surveyActionData ==> 
-	
-	//{"answer": ["d", "b", "a", "a", "c"], "gender": "female", "age": 30}
-	
-	
+((m) => {
+	let module = m || window;
 	// 순수 데이터 처리로직
 	class JsData {
 		constructor(surveyData,surveyActionData) {
@@ -70,3 +61,7 @@
 			return this.result;
 		}
 	}
+	
+	m.JsData = JsData;
+	
+})(window)
