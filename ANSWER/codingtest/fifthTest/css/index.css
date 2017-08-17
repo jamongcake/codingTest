@@ -1,0 +1,24 @@
+.container{margin: 10px auto;width:440px;border:1px solid #eee;font-weight:bold;font-size:13px;}
+.container .fa{margin-right:10px;font-weight:bold;font-size:18px;}
+.container .head{padding:10px;}
+.container .head img{width:30px;height:30px;border-radius: 30px;float:left;}
+.container .head p{display:inline-block;margin-left:10px;line-height:30px;}
+.container i{display:inline-block;width:30px;height:30px;border-radius:30px;margin-right:5px;}
+.container i:hover{border:1px solid black;box-sizing: border-box;}
+.container i.i-heart{background: url(../img/iconsWhite.png) -5px -10px;background-size:120px;}
+.container i.i-comment{background: url(../img/iconsWhite.png) -33px -10px;background-size:120px;}
+.container i.i-heart:hover{background: url(../img/iconsBlack.png) -5px -10px;background-size:120px;}
+.container i.i-comment:hover{background: url(../img/iconsBlack.png) -33px -10px;background-size:120px;}
+.container .picture img{width:100%;}
+.container .like-comment{padding:10px;}
+.container .like-comment p,li{margin-top:10px;}
+.container .like-comment .date{color:#a2a2a2;}
+.container .comments p:first-child{color:#a2a2a2;}
+.container .comments li span:last-child{margin-left:10px;font-weight:lighter;}
+.container .enter-comment{margin-top:10px;padding-top:10px;border-top:1px solid black;}
+.container .enter-comment input{display:inline-block;width:100%;border:none;}
+input:-ms-input-placeholder {font-weight:bold;color:#aaa }
+input::-webkit-input-placeholder {font-weight:bold;color:#aaa }
+input::-moz-placeholder {font-weight:bold;color:#aaa }
+input::-moz-placeholder {font-weight:bold;color:#aaa }
+.container .enter-comment input:focus{outline:none;}
